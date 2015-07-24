@@ -1,10 +1,91 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Materials</title>
-  </head>
-  <body>
 
-  </body>
+<head>
+  <title>Prime Ministers of India</title>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <link rel="icon" href="/mdl/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/mdl/material.min.css">
+  <style media="screen">
+    .show {
+      animation-fill-mode: forwards;
+      animation-duration: 15s;
+      animation-name: disappear;
+    }
+
+    @keyframes disappear {
+      from {
+        background-color: rgba(255, 64, 129, 1);
+        display: block;
+      }
+      to {
+        background-color: rgba(255, 64, 129, 0);
+        display: none;
+        opacity: 0;
+      }
+    }
+
+    .time-error {
+      display: none;
+    }
+
+    h1 {
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+  <script type="text/javascript" src="/mdl/material.min.js">
+  </script>
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <script type="text/javascript" src="main.js">
+
+  </script>
+</head>
+
+<body>
+  <h1>Prime Minister's Timeline</h1>
+  <table style="width:100%">
+    <tr>
+      <td>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo" id="divemp">
+          <input class="mdl-textfield__input" type="text" id="empire" />
+          <label class="mdl-textfield__label" for="empire">Party Name</label>
+        </div>
+      </td>
+      <td>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo" id="divempr">
+          <input class="mdl-textfield__input" type="text" id="emperor" />
+          <label class="mdl-textfield__label" for="emperor">Prime Minister Name</label>
+        </div>
+      </td>
+      <td>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo" id="divsy">
+          <input class="mdl-textfield__input" type="text" id="startyear" pattern="-?[0-9]*(\.[0-9]+)?" />
+          <label class="mdl-textfield__label" for="startyear">Start Year</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+      </td>
+      <td>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo" id="divey">
+          <input class="mdl-textfield__input" type="text" id="endyear" pattern="-?[0-9]*(\.[0-9]+)?" />
+          <label class="mdl-textfield__label" for="endyear">End Year</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+      </td>
+      <td>
+        <button type="button" onClick="fnAdd();" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Add Prime Minister</button>
+      </td>
+    </tr>
+  </table>
+
+  <div class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent time-error" id="div-error">
+    Please enter all the fields before saving
+  </div>
+
+
+  <div id="timeline" style='height:100%;'>
+
+  </div>
+
+</body>
+
 </html>
